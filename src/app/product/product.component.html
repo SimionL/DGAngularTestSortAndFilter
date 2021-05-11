@@ -1,0 +1,58 @@
+<div style="text-align:center; color:green">
+    <h3>Please add new product!</h3>
+</div>
+<form [formGroup]="form" (ngSubmit)="save(form.value)">
+    <div>
+        <label>Product ID
+            <input type="number" formControlName="productID" maxlength="13">
+        </label>
+    </div>
+
+    <div>
+        <label>Product name
+            <input type="text" formControlName="productName" maxlength="50">
+        </label>
+    </div>
+
+    <div>
+        <label>Product manager
+            <input type="text" formControlName="productManager" maxlength="30">
+        </label>
+    </div>
+
+    <div>
+        <label>Sales start date
+            <input type="date" formControlName="salesStartDate" maxlength="10">
+        </label>
+    </div>
+
+    <div>
+        <label>Q1
+            <input type="number" formControlName="salesQ1">
+        </label>
+    </div>
+
+    <div>
+        <label>Q2
+            <input type="number" formControlName="salesQ2">
+        </label>
+    </div>
+
+    <div>
+        <label>Q3
+            <input type="number" formControlName="salesQ3">
+        </label>
+    </div>
+
+    <div>
+        <label>Q4
+            <input type="number"  formControlName="salesQ4">
+        </label>
+    </div>
+
+    <div style="text-align:center">
+        <input type="submit" style="cursor:pointer" value="save" [disabled]="!form.valid"> &nbsp; &nbsp; &nbsp;
+        <input type="button" style="cursor:pointer" value="clear" (click)="form.reset()">
+    </div>
+
+</form>

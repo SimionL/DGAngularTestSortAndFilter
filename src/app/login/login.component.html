@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="login(form.value)">
+
+    <label>Username
+      <input type="text" formControlName="username">
+    </label>
+
+    <label>Password
+      <input type="password" formControlName="password">
+    </label>
+
+    <div *ngIf="loginError" style="color:red">unauthorized user</div>
+
+    <div>
+      <input type="submit" style="cursor:pointer" value="Login" [disabled]="!form.valid">
+    </div>
+
+</form>
